@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    internal class SaveTextFile :FileFactory
+    internal class TextFile :FileFactory
     {
         public override void Save(string Contents)
-        { 
-            TextWriter sw = new StreamWriter(Application.StartupPath + "\\Contents.txt");
-            
+        {
+            TextWriter sw = new StreamWriter(Application.StartupPath + "\\SaveMethodContents.txt");
+
             try
             {
                 sw.Write(Contents);
-                
+
             }
             catch (Exception ex)
             {
@@ -29,6 +29,21 @@ namespace WindowsFormsApp1
                 sw.Close();
             }
         }
-        
+        public override void SaveComposite(Composite Contents)
+        {
+
+            try
+            {
+                Contents.ComposePdf();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Unable to save file", MessageBoxButtons.OK);
+
+            }
+
+        }
+
     }
 }

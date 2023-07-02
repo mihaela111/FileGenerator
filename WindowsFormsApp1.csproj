@@ -58,11 +58,14 @@
     <Compile Include="FileEditor.Designer.cs">
       <DependentUpon>FileEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="IComponent.cs" />
+    <Compile Include="Composite.cs" />
+    <Compile Include="Leaf.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FileFactory.cs" />
-    <Compile Include="SavePdfFile.cs" />
-    <Compile Include="SaveTextFile.cs" />
+    <Compile Include="PdfFile.cs" />
+    <Compile Include="TextFile.cs" />
     <EmbeddedResource Include="FileEditor.resx">
       <DependentUpon>FileEditor.cs</DependentUpon>
     </EmbeddedResource>

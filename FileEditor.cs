@@ -24,45 +24,38 @@ namespace WindowsFormsApp1
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            //create obj of base class
-            FileFactory newFile;
+            //create obj of Factory class
+            FileFactory saveFile;
 
              if(radTxt.Checked)
             {
-                //call save text subclass
-                newFile = new SaveTextFile();
-                newFile.Save(textBox1.Text);
+                //use subclass to redefine which object is instantiated
+                saveFile = new TextFile();
+
+                //leaf  & composite objects for composite pattern
+                Leaf leaf1 = new Leaf("element 1");
+                Leaf leaf2 = new Leaf("element 2");
+                leaf1.SetText(textBox1.Text);
+                leaf2.SetText(textBox1.Text);
+
+                Composite composite = new Composite("Composite");
+
+                //add leafs to composite
+                composite.Components.Add(leaf1);
+                composite.Components.Add(leaf2);
+
+                saveFile.SaveComposite(composite);
+
+                saveFile.Save(textBox1.Text);
 
             }
              else
             {
-                newFile = new SavePdfFile();
-                newFile.Save(textBox1.Text);
-                /*  saveFile = new SavePdfFile();
-                   using (SaveFileDialog sfd = new SaveFileDialog(){ Filter = "PDF file|*.pdf", ValidateNames = true })
-                   {
-                       if (sfd.ShowDialog() == DialogResult.OK)
-                       {
-                           //iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4.Rotate());
-                           //try
-                           //{
-                           //    PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
-                           //    doc.Open();
-                           //    doc.Add(new iTextSharp.text.Paragraph(richTextBox.Text));
-                           //}
-                           //catch (Exception ex)
-                           //{
-                           //    MessageBox.Show(ex.Message, "Unable to save file", MessageBoxButtons.OK);
-
-                           //}
-                           //finally
-                           //{
-                           //    doc.Close();
-                           //}
 
 
-                       }
-                   }*/
+                saveFile = new PdfFile();
+                saveFile.Save(textBox1.Text);
+
             }
 
         }

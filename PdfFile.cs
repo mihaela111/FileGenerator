@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    internal class SavePdfFile : FileFactory
+    internal class PdfFile : FileFactory
     {
         public override void Save(string Contents)
         {
@@ -31,5 +31,8 @@ namespace WindowsFormsApp1
                 doc.Close();
             }
         }
+
+
     }
 }
+
