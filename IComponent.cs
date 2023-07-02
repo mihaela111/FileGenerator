@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    internal interface IComponent
+    public interface IComponent
     {
         void SetText(string data);
         string ReturnText();
