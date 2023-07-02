@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    internal class Leaf : IComponent
+    public class Leaf : IComponent
     {
         private string _LeafName;
         private string _LeafContent;
@@ -30,7 +30,6 @@ namespace WindowsFormsApp1
         {
             return _LeafContent;
         }
-
 
 
     }

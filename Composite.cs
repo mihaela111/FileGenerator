@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    internal class Composite : IComponent
+    public class Composite : IComponent
     {
         public List<IComponent> Components = new List<IComponent>();
         private string _PdfCompositeName;
