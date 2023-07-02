@@ -12,19 +12,17 @@ namespace WindowsFormsApp1
     {
         public List<IComponent> Components = new List<IComponent>();
         private string _PdfCompositeName;
-        private string _ComponentData;
 
         public Composite(string name)
         {
             _PdfCompositeName = name;
-            _ComponentData=name;
         }
 
         public string ReturnText()
         {
             return _PdfCompositeName;
         }
-        public void ComposePdf ()
+        public void ComposeTxt ()
         {
             TextWriter sw = new StreamWriter(Application.StartupPath + "\\Contents.txt");
             foreach (IComponent component in Components)

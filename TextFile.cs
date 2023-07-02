@@ -16,7 +16,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                sw.Write(Contents);
+                sw.WriteLine(Contents);
 
             }
             catch (Exception ex)
@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                Contents.ComposePdf();
+                Contents.ComposeTxt();
 
             }
             catch (Exception ex)

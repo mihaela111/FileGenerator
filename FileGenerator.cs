@@ -13,9 +13,9 @@ using System.IO;
 
 namespace WindowsFormsApp1
 {
-    public partial class FileEditor : Form
+    public partial class FileGenerator : Form
     {
-        public FileEditor()
+        public FileGenerator()
         {
             InitializeComponent();
         }
@@ -33,16 +33,19 @@ namespace WindowsFormsApp1
                 saveFile = new TextFile();
 
                 //leaf  & composite objects for composite pattern
-                Leaf leaf1 = new Leaf("element 1");
-                Leaf leaf2 = new Leaf("element 2");
-                leaf1.SetText(textBox1.Text);
-                leaf2.SetText(textBox1.Text);
+                Leaf nameLeaf = new Leaf("name");
+                Leaf numberLeaf = new Leaf("number");
+                Leaf detailsLeaf = new Leaf("details");
+                nameLeaf.SetText(textBox1.Text);
+                numberLeaf.SetText(textBox2.Text);
+                detailsLeaf.SetText(textBox3.Text);
 
                 Composite composite = new Composite("Composite");
 
                 //add leafs to composite
-                composite.Components.Add(leaf1);
-                composite.Components.Add(leaf2);
+                composite.Components.Add(nameLeaf);
+                composite.Components.Add(numberLeaf);
+                composite.Components.Add(detailsLeaf);
 
                 saveFile.SaveComposite(composite);
 
